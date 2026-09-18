@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #111111;
+  --color-ink-soft: #1c1c1c;
+  --color-paper: #f7f6f3;
+  --color-yellow: #ffc72c;
+  --color-yellow-soft: #ffe08a;
+  --color-gray-mid: #6b6b6b;
+  --font-display: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+:root {
+  --color-ink: #111111;
+  --color-ink-soft: #1c1c1c;
+  --color-paper: #f7f6f3;
+  --color-white: #ffffff;
+  --color-yellow: #ffc72c;
+  --color-yellow-soft: #ffe08a;
+  --color-gray: #6b6b6b;
+  --color-line: rgba(17, 17, 17, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: var(--color-ink);
+  background: var(--color-paper);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: 'Poppins', sans-serif;
+}
+
+::selection {
+  background: var(--color-yellow);
+  color: var(--color-ink);
+}
+
+.tracking-wide-label {
+  letter-spacing: 0.3em;
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1.5px var(--color-ink);
+  color: transparent;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-14px); }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+}
+.animate-float-slow {
+  animation: floatSlow 8s ease-in-out infinite;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up {
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-paper);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-ink);
+  border-radius: 10px;
+}
